@@ -8,6 +8,7 @@ public class Jogador {
 
     public Jogador() {
         this.nome = scanner.nextLine();
+        scanner.close();
     }
     public void editNome() {
         this.nome = scanner.nextLine();
