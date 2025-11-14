@@ -1,16 +1,18 @@
+package classesquiz;
+
 import java.util.Scanner;
 
 public class Jogador {
     private String nome = "";
     private final Scanner scanner = new Scanner(System.in);
 
-    Jogador() {
+    public Jogador() {
         this.nome = scanner.nextLine();
     }
-    void editNome() {
+    public void editNome() {
         this.nome = scanner.nextLine();
     }
-    String getNome() {
+    public String getNome() {
         return nome;
     }
 }
