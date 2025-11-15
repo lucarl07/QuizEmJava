@@ -1,9 +1,33 @@
 package classesquiz.perguntas;
 
-public class PerguntaMultiplaEscolha extends Pergunta {
-    int pontuacao = 10;
+class Alternativa {
+    private char letra;
+    private String resposta;
 
-    public PerguntaMultiplaEscolha(String enunciado, char respostaCorreta) {
+    Alternativa(char letra, String resposta) {
+        this.letra = letra;
+        this.resposta = resposta;
+    }
+
+    public char getLetra() {
+        return letra;
+    }
+    public String getResposta() {
+        return resposta;
+    }
+    public void setLetra(char letra) {
+        this.letra = letra;
+    }
+    public void setResposta(String resposta) {
+        this.resposta = resposta;
+    }
+}
+
+public class PerguntaMultiplaEscolha extends Pergunta {
+    Alternativa[] alternativas;
+
+    public PerguntaMultiplaEscolha(String enunciado, Alternativa[] alternativas, char respostaCorreta) {
+        this.alternativas = alternativas;
         super(enunciado, respostaCorreta);
     }
 
