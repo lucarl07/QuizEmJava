@@ -1,10 +1,26 @@
 package classesquiz.perguntas;
 
 public class PerguntaVerdadeiroFalso extends Pergunta {
-    int pontuacao = 15;
-
     public PerguntaVerdadeiroFalso(String enunciado, char respostaCorreta) {
         super(enunciado, respostaCorreta);
+    }
+
+    @Override
+    public void verificarResposta() {
+        super.verificarResposta();
+        String strRespostaCorreta = respostaCorreta == 'V' ? "verdadeira" : "falsa";
+
+        if (isRespostaJogadorCorreta) {
+            System.out.printf(
+                "Você acertou! A afirmação \"%s\" é %s. %n",
+                this.enunciado, strRespostaCorreta
+            );
+        } else {
+            System.out.printf(
+                "Infelizmente sua resposta está errada. A afirmação \"%s\" é %s. %n",
+                this.enunciado, strRespostaCorreta
+            );
+        }
     }
 
     @Override
