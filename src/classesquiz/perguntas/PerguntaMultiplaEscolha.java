@@ -26,7 +26,14 @@ class Alternativa {
 public class PerguntaMultiplaEscolha extends Pergunta {
     Alternativa[] alternativas;
 
-    public PerguntaMultiplaEscolha(String enunciado, Alternativa[] alternativas, char respostaCorreta) {
+    public PerguntaMultiplaEscolha(String enunciado, String[] strAlternativas, char respostaCorreta) {
+        char[] alfabeto = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+        Alternativa[] alternativas = new Alternativa[strAlternativas.length];
+
+        for (int i = 0; i < strAlternativas.length; i++) {
+            alternativas[i] = new Alternativa(alfabeto[i], strAlternativas[i]);
+        }
+
         this.alternativas = alternativas;
         super(enunciado, respostaCorreta);
     }
