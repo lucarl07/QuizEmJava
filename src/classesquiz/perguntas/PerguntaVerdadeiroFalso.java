@@ -11,8 +11,10 @@ public class PerguntaVerdadeiroFalso extends Pergunta {
     public int calcularPontuacao() {
         // Jogador ganha 15 pontos caso acertar, ou perde 5 caso errar;
         if (isRespostaJogadorCorreta) {
-            return pontuacao;
+            pontuacao = 15;
+        } else {
+            pontuacao = -5;
         }
-        return -5;
+        return pontuacao;
     }
 }

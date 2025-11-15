@@ -11,8 +11,8 @@ public class PerguntaMultiplaEscolha extends Pergunta {
     public int calcularPontuacao() {
         // Jogador pode ganhar 10 pontos caso acertar;
         if (isRespostaJogadorCorreta) {
-            return pontuacao;
+            pontuacao = 10;
         }
-        return 0;
+        return pontuacao;
     }
 }
