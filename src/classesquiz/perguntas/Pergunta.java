@@ -7,7 +7,7 @@ abstract class Pergunta implements Pontuavel {
     protected char respostaCorreta;
     protected char respostaJogador;
     protected boolean isRespostaJogadorCorreta;
-    protected int pontuacao;
+    protected int pontuacao = 0;
 
     public Pergunta(String enunciado, char respostaCorreta) {
         this.enunciado = enunciado;
@@ -16,10 +16,12 @@ abstract class Pergunta implements Pontuavel {
 
     public void fazerPergunta() {
         System.out.println(enunciado);
-
+        obterRespostaJogador();
+        verificarResposta();
+    }
+    public void obterRespostaJogador() {
         Scanner scanner = new Scanner(System.in);
         respostaJogador = scanner.nextLine().charAt(0);
-        verificarResposta();
         scanner.close();
     }
     public void verificarResposta() {
