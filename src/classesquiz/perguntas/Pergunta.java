@@ -27,6 +27,10 @@ abstract class Pergunta implements Pontuavel {
     public void verificarResposta() {
         isRespostaJogadorCorreta = respostaCorreta == respostaJogador;
     }
+    public boolean obterStatusResposta() {
+        verificarResposta();
+        return isRespostaJogadorCorreta;
+    }
     public int calcularPontuacao() {
         return 0;
     }
