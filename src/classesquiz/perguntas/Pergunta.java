@@ -22,7 +22,6 @@ public abstract class Pergunta implements Pontuavel {
     public void obterRespostaJogador() {
         Scanner scanner = new Scanner(System.in);
         respostaJogador = scanner.nextLine().charAt(0);
-        scanner.close();
     }
     public void verificarResposta() {
         isRespostaJogadorCorreta = respostaCorreta == respostaJogador;
