@@ -27,7 +27,7 @@ public class PerguntaMultiplaEscolha extends Pergunta {
     Alternativa[] alternativas;
 
     public PerguntaMultiplaEscolha(String enunciado, String[] strAlternativas, char respostaCorreta) {
-        char[] alfabeto = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+        char[] alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
         Alternativa[] alternativas = new Alternativa[strAlternativas.length];
 
         for (int i = 0; i < strAlternativas.length; i++) {
@@ -44,7 +44,7 @@ public class PerguntaMultiplaEscolha extends Pergunta {
 
         for (Alternativa a : alternativas) {
             System.out.printf(
-                "%s - %s %n",
+                "%s) %s %n",
                 a.getLetra(), a.getResposta()
             );
         }
