@@ -39,8 +39,8 @@ public class PerguntaMultiplaEscolha extends Pergunta {
     }
 
     @Override
-    public void fazerPergunta() {
-        System.out.println(enunciado);
+    public void fazerPergunta(int numPergunta) {
+        System.out.printf("%s - %s %n", numPergunta, enunciado);
 
         for (Alternativa a : alternativas) {
             System.out.printf(

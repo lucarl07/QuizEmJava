@@ -14,8 +14,8 @@ abstract class Pergunta implements Pontuavel {
         this.respostaCorreta = respostaCorreta;
     }
 
-    public void fazerPergunta() {
-        System.out.println(enunciado);
+    public void fazerPergunta(int numPergunta) {
+        System.out.printf("%s - %s %n", numPergunta, enunciado);
         obterRespostaJogador();
         verificarResposta();
     }
