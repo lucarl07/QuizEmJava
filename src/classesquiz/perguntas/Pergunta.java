@@ -27,7 +27,6 @@ public abstract class Pergunta implements Pontuavel {
         isRespostaJogadorCorreta = respostaCorreta == respostaJogador;
     }
     public boolean isRespostaJogadorCorreta() {
-        verificarResposta();
         return isRespostaJogadorCorreta;
     }
     public int calcularPontuacao() {
