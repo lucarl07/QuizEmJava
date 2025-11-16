@@ -1,13 +1,60 @@
 package classesquiz;
 
+import classesquiz.perguntas.Pergunta;
+
 public class Quiz {
     // Atributos da classe:
-    static int quizzesJogados = 0;
+    private static int quizzesJogados = 0;
 
     // Atributos dos objetos:
-    int pontuacao = 0;
+    private String nome;
+    private Pergunta[] perguntas;
+    private int pontuacao = 0;
 
-    void adicionarPontuacao(int pontos) {
+    public Quiz(String nome) {
+        this.nome = nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public void setPerguntas(Pergunta[] perguntas) {
+        this.perguntas = perguntas;
+    }
+    public String getNome() {
+        return nome;
+    }
+    public void executar() {
+        SistemaLogs quizLog = new SistemaLogs();
+
+        for (int i = 0; i < perguntas.length; i++) {
+            Pergunta pergunta = perguntas[i];
+            pergunta.fazerPergunta(i+1);
+
+            int pontos = pergunta.calcularPontuacao();
+            adicionarPontuacao(pontos);
+
+            if (pergunta.isRespostaJogadorCorreta()) {
+                quizLog.registrarEvento(
+                        String.format("Pergunta %s respondida corretamente; +%s pontos.", i+1, pontos)
+                );
+            } else {
+                quizLog.registrarEvento(
+                        String.format("Pergunta %s respondida incorretamente; %s pontos.", i+1, pontos)
+                );
+            }
+        }
+
+        incrementarQuizzesJogados();
+        System.out.printf(
+                "Parabéns, você finalizou o quiz \"%s\"! \nPontuação adquirida: %s \nTotal de quizzes jogados: %s",
+                nome, pontuacao, quizzesJogados
+        );
+    }
+    private void incrementarQuizzesJogados() {
+        quizzesJogados += 1;
+    }
+    private void adicionarPontuacao(int pontos) {
         pontuacao += pontos;
     }
 }
