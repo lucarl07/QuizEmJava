@@ -2,7 +2,7 @@ package classesquiz.perguntas;
 
 import java.util.Scanner;
 
-abstract class Pergunta implements Pontuavel {
+public abstract class Pergunta implements Pontuavel {
     protected String enunciado;
     protected char respostaCorreta;
     protected char respostaJogador;
