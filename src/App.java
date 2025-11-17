@@ -72,7 +72,7 @@ public class App {
 
     public static void main(String[] args) {
         SistemaLogs appLog = new SistemaLogs();
-        appLog.registrarEvento("Programa iniciado");
+        appLog.registrarEvento(0);
 
         // Introdução ao quiz:
         System.out.println("=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=");
@@ -90,5 +90,8 @@ public class App {
         System.out.println("Iniciando o quiz agora...");
         Quiz quizHistoriaDoRock = obterQuizHistoriaDoRock();
         quizHistoriaDoRock.executar();
+
+        // Finalizando o programa:
+        appLog.registrarEvento(2);
     }
 }

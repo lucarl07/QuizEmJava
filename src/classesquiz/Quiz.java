@@ -26,7 +26,7 @@ public class Quiz {
     }
     public void executar() {
         SistemaLogs quizLog = new SistemaLogs();
-        quizLog.registrarEvento("Quiz " + nome + " iniciado.");
+        quizLog.registrarEvento(3, nome);
 
         for (int i = 0; i < perguntas.length; i++) {
             Pergunta pergunta = perguntas[i];
@@ -37,7 +37,7 @@ public class Quiz {
 
             if (pergunta.isRespostaJogadorCorreta()) {
                 quizLog.registrarEvento(
-                        String.format("Pergunta " + i+1 + " respondida corretamente; +%s pontos.", i+1, pontos)
+                        String.format("Pergunta %s respondida corretamente; +%s pontos.", i+1, pontos)
                 );
             } else {
                 quizLog.registrarEvento(
@@ -51,7 +51,7 @@ public class Quiz {
                 "Parabéns, você finalizou o quiz \"%s\"! \nPontuação adquirida: %s \nTotal de quizzes jogados: %s",
                 nome, pontuacao, quizzesJogados
         );
-        quizLog.registrarEvento("Quiz " + nome + " finalizado com êxito.");
+        quizLog.registrarEvento(5, nome);
     }
     private void incrementarQuizzesJogados() {
         quizzesJogados += 1;
