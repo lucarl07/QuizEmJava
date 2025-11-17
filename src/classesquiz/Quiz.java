@@ -14,6 +14,9 @@ public class Quiz {
     public Quiz(String nome) {
         this.nome = nome;
     }
+    private static void incrementarQuizzesJogados() {
+        quizzesJogados += 1;
+    }
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -23,6 +26,9 @@ public class Quiz {
     }
     public String getNome() {
         return nome;
+    }
+    private void adicionarPontuacao(int pontos) {
+        pontuacao += pontos;
     }
     public void executar() {
         SistemaLogs quizLog = new SistemaLogs();
@@ -52,11 +58,5 @@ public class Quiz {
                 nome, pontuacao, quizzesJogados
         );
         quizLog.registrarEvento(5, nome);
-    }
-    private void incrementarQuizzesJogados() {
-        quizzesJogados += 1;
-    }
-    private void adicionarPontuacao(int pontos) {
-        pontuacao += pontos;
     }
 }
